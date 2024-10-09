@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Кръг</title>
+</head>
+<body>
+    <canvas id="circleCanvas" width="200" height="200">Draw here with JavaScript</canvas>
+    <script>
+        var canvas = document.getElementById('circleCanvas');
+        var ctx = canvas.getContext('2d');
+        
+        // Рисуване на кръг
+        ctx.beginPath(); // Започва нов път
+        ctx.arc(100, 100, 50, 0, 2 * Math.PI); // Определя кръг с център (100, 100), радиус 50
+        ctx.fillStyle = 'red'; // Цвят за запълване
+        ctx.fill(); // Запълва кръга
+        ctx.stroke(); // Рисува очертанията на кръга
+    </script>
+</body>
+</html>
