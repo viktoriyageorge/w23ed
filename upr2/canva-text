@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Текст</title>
+</head>
+<body>
+    <canvas id="textCanvas" width="300" height="100">Draw here with JavaScript</canvas>
+    <script>
+        var canvas = document.getElementById('textCanvas');
+        var ctx = canvas.getContext('2d');
+        
+        // Рисуване на текст
+        ctx.font = '30px Arial'; // Определя шрифта и размера на текста
+        ctx.fillStyle = 'purple'; // Определя цвят за текста
+        ctx.fillText('Здравей, свят!', 50, 50); // Рисува текста на зададените координати
+    </script>
+</body>
+</html>
