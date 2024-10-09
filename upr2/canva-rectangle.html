@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Пример</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="200" height="100">Draw here with JavaScript</canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        
+        // Рисуване на правоъгълник
+        ctx.fillStyle = 'blue'; // Определяне на цвета за запълване
+        ctx.fillRect(10, 10, 150, 75); // Запълване на правоъгълник на координати (10, 10), ширина 150px, височина 75px
+    </script>
+</body>
+</html>
