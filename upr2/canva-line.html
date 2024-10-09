@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Линия</title>
+</head>
+<body>
+    <canvas id="lineCanvas" width="200" height="100">Draw here with JavaScript</canvas>
+    <script>
+        var canvas = document.getElementById('lineCanvas');
+        var ctx = canvas.getContext('2d');
+        
+        // Рисуване на линия
+        ctx.beginPath(); // Започва нов път
+        ctx.moveTo(0, 0); // Начална точка на линията
+        ctx.lineTo(200, 100); // Крайна точка на линията
+        ctx.strokeStyle = 'green'; // Определяне на цвят за линията
+        ctx.lineWidth = 5; // Определяне на дебелината на линията
+        ctx.stroke(); // Рисуване на линията
+    </script>
+</body>
+</html>
