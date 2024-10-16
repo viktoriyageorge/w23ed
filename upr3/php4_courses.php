@@ -1,5 +1,5 @@
 <?php
-// Започваме сесията, за да съхраняваме курсовете в нея
+// Започваме сесията
 session_start();
 
 // Инициализиране на масиви за валидни данни и грешки
@@ -16,19 +16,18 @@ if ($_POST) {
     // Получаване на стойността на полето 'title' от POST заявката
     $title = trim($_POST['title']);
 
-    // Валидация на полето
+    // Валидация на полето за курс
     if (!$title) {
-        $errors['title'] = 'Името е задължително поле.';
+        $errors['title'] = 'Името на курса е задължително поле.';
     } elseif (strlen($title) > 150) {
-        $errors['title'] = 'Името има максимална дължина от 150 символа.';
-    } else {
-        $valid['title'] = $title;
+        $errors['title'] = 'Името на курса има максимална дължина от 150 символа.';
+    }
 
-        // Добавяме валидния курс в масива със съхранените курсове в сесията
+    // Ако няма грешки, добавяме курса в сесията
+    if (empty($errors)) {
         $_SESSION['courses'][] = $title;
     }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="bg">
@@ -42,7 +41,7 @@ if ($_POST) {
 <h1>Добавяне на нов курс</h1>
 <form method="post" action="">
     <label for="course-title">Име на курса:</label><br>
-    <input id="course-title" name="title" value="<?= isset($valid['title']) ? htmlspecialchars($valid['title']) : '' ?>"><br>
+    <input id="course-title" name="title"><br>
     <?php if (isset($errors['title'])): ?>
         <p style="color: red;"><?= $errors['title'] ?></p>
     <?php endif; ?>
