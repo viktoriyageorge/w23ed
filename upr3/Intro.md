@@ -1,0 +1,1 @@
+1. **Why .php extension?** - _This file contains PHP code that needs to be processed before sending the final HTML to the browser. The PHP code is replaced with the result, and the browser displays the page._
